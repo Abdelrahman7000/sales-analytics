@@ -1,0 +1,153 @@
+version: 2
+
+models:
+  - name: stg_customer
+    description: "Table containing customer information including their ID, name, age, marketing channel source, and segment."
+    columns:
+      - name: customer_id
+        description: "The primary key for this table"
+        data_tests:
+          - unique
+          - not_null
+      
+      - name: name
+        description: "Customers' fullname"
+
+      - name: age
+        description: "Customer's age"
+
+      - name: segment
+        description: "Segment to which the customer belongs (Consumer, Corporate,Home Office)."
+        data_tests:
+          - accepted_values:
+              values:
+                - "Consumer"
+                - "Corporate"
+                - "Home Office"   
+
+      - name: marketing_channel
+        description: "The marketing channel through which the customer was acquired (word_of_mouth,events,social_media,partnerships,referral)."
+        data_tests:
+          - accepted_values:
+              values:
+                - "word_of_mouth"
+                - "events"
+                - "social_media"
+                - "partnerships"
+                - "referral"
+
+  - name: stg_order_detail
+    description: "Detailed information about each order including product details and financials."
+    columns:
+      - name: row_id
+        description: "The primary key for this table"
+        data_tests:
+          - unique
+          - not_null
+      
+      - name: order_id
+        description: "Identifier for each order" 
+
+      - name: product_id
+        description: "Identifier for each product"
+
+      - name: sales
+        description: "Total sales amount for the order detail."
+        
+      - name: quantity
+        description: "Quantity of the product ordered."
+         
+      - name: discount
+        description: "Discount applied to the order detail."
+            
+      - name: profit
+        description: "Profit from the order."
+        
+      - name: shipping_cost
+        description: "Cost associated with shipping the order."
+
+  - name: stg_order
+    description: "Table containing order details including customer information, order priority, and market."
+    columns:
+      - name: order_id
+        description: "The primary key for this table"
+        data_tests:
+          - unique
+          - not_null
+
+      - name: customer_id
+        description: "Identifier for each customer placing the order"
+
+      - name: order_priority
+        description: "Priority of the order (e.g., high, medium, low)."
+        data_tests:
+          - accepted_values:
+              values:
+                - "High"
+                - "Medium"
+                - "Low"
+                - "Critical" 
+
+      - name: order_date
+        description: "Date when the order was placed."
+
+      - name: market
+        description: "Market where the order was placed (e.g. Africa, US)"
+
+  - name: stg_product
+    description: "Table containing product information including product ID, name, category, and sub-category."
+    columns:
+      - name: product_id
+        description: "The primary key for this table"
+        data_tests:
+          - unique
+          - not_null
+
+      - name: product_name
+        description: "Name of the product"
+
+      - name: category
+        description: "Category to which the product belongs."
+
+      - name: sub_category
+        description: "More detailed categories"
+
+    
+  - name: stg_shipping
+    description: "Table containing shipping details including ship date, ship mode, and location."
+    columns:
+      - name: shipping_id
+        description: "The primary key for this table"
+        data_tests:
+          - unique
+          - not_null
+      
+      - name: order_id
+        description: "Identifier for each order" 
+
+      - name: shipping_data
+        description: "Date when the order was shipped"
+
+      - name: ship_mode
+        description: "Mode of shipping "
+        data_tests:
+          - accepted_values:
+              values:
+                - "Standard Class"
+                - "Second Class"
+                - "First Class"
+                - "Same Day" 
+
+      - name: city
+        description: "City where the order was shipped to."
+
+      - name: state
+        description: "State where the order was shipped to."
+
+      - name: country
+        description: "Country where the order was shipped to."
+
+      - name: region
+        description: "Region where the order was shipped to."
+
+

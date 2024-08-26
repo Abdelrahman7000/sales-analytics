@@ -1,5 +1,9 @@
 # ELT-for-sales-data
 
+## Architecture
+[
+![etl (2)](https://github.com/user-attachments/assets/6935f179-ec84-440f-8b4d-81ad1065e37c)
+](url)
 
 
 
@@ -15,6 +19,11 @@
     <li>dbt as transformation and data modeling tool.</li>
     <li>Tableau for data visualization.</li>
 </ul>
+
+## dbt DAG
+![DAG](https://github.com/user-attachments/assets/cf098443-77fe-4a17-94e2-914dd15d4de6)
+
+
 
 ### Using the starter project
 

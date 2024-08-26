@@ -7,7 +7,7 @@ sources:
     schema: public
     tables:
       - name: customer
-        description: raw data for customers
+        description: raw data for customers, One record per customer
 
       - name: order
         description: Table containing order details with information about each order.

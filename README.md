@@ -1,4 +1,20 @@
-Welcome to your new dbt project!
+# ELT-for-sales-data
+
+
+
+
+
+
+
+
+## Tools
+<ul>
+    <li>Airbyte for extracting the data and loading it to BigQuery.</li>
+    <li>Cron for scheduling the extraction process.</li>
+    <li>Postgre as data warehouse.</li>
+    <li>dbt as transformation and data modeling tool.</li>
+    <li>Tableau for data visualization.</li>
+</ul>
 
 ### Using the starter project
 
